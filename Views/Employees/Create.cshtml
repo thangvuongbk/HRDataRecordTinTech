@@ -1,0 +1,105 @@
+﻿@model HRDataRecordTinTech.Models.Employee
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4>Employee Form</h4>
+<hr />
+<div class="container" style="border:groove; color:cadetblue; padding: 5px">
+    <div class="col-md-6">
+        <div class="form-group" >
+            <form asp-action="Create">
+                <div class="row">
+                    <div class="col-md-6" style="float:left; border:groove">
+                        <h4 style="text-align:center"><b>PERSONEL REGISTER</b></h4>
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="FullName" class="control-label"></label>
+                            <input asp-for="FullName" class="form-control" />
+                            <span asp-validation-for="FullName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="EmployeeNumber" class="control-label"></label>
+                            <input asp-for="EmployeeNumber" class="form-control" />
+                            <span asp-validation-for="EmployeeNumber" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Phone" class="control-label"></label>
+                            <input asp-for="Phone" class="form-control" />
+                            <span asp-validation-for="Phone" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Email" class="control-label"></label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="EmployeeID" class="control-label"></label>
+                            <input asp-for="EmployeeID" class="form-control" />
+                            <span asp-validation-for="EmployeeID" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Position" class="control-label"></label>
+                            <input asp-for="Position" class="form-control" />
+                            <span asp-validation-for="Position" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Salary" class="control-label"></label>
+                            <input asp-for="Salary" class="form-control" />
+                            <span asp-validation-for="Salary" class="text-danger"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6" style="border:groove; float:left">
+                        <h4 style="text-align:center"><b>BACKGROUND</b></h4>
+                        <div style="float:left; width:50%">
+                            <input asp-for="bEducation" type="checkbox"> Education<br />
+                            <input asp-for="bTOEIC" type="checkbox"> TOEIC <br />
+                            <input asp-for="bJapanese" type="checkbox"> Japanese <br />
+                            <span asp-validation-for="bTOEIC" class="text-danger"></span>
+                            <span asp-validation-for="bJapanese" class="text-danger"></span>
+                            <span asp-validation-for="bEducation" class="text-danger"></span>
+                        </div>
+                        <div style="float:left; width:50%">
+                            <input asp-for="bEducation" type="checkbox"> Others<br />
+                            <input asp-for="bTOEIC" type="checkbox"> Others <br />
+                            <input asp-for="bJapanese" type="checkbox"> Others <br />
+                            <span asp-validation-for="bTOEIC" class="text-danger"></span>
+                            <span asp-validation-for="bJapanese" class="text-danger"></span>
+                            <span asp-validation-for="bEducation" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <br />
+                <div class="row" align="justify">
+                    <div class="col-md-6">
+                        <div class="form-group col-md-6">
+                            <input type="submit" value="Create" class="btn btn-primary btn-block" />
+                        </div>
+                        <div class="form-group col-md-6">
+                            <a asp-action="Index" class="btn btn-secondary btn-block"><i class="fa fa-table"></i> Back to Home</a>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+                
+            
+        </div>
+    </div>
+
+
+    
+
+
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
